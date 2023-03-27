@@ -139,3 +139,14 @@ Intégration de LDAP et de Kerberos : La formation RH134 couvre également l'int
 
 En résumé, la formation RH134 couvre la configuration de l'authentification à l'aide de LDAP et de Kerberos, en utilisant des techniques telles que l'installation et la configuration de LDAP et de Kerberos, l'intégration de LDAP et de Kerberos pour une authentification centralisée. Les participants apprendront à configurer ces techniques pour améliorer la performance et la sécurité de leur système Red Hat Enterprise Linux.
 
+
+
+### Partitionnement post-installation 
+## 1. Creer un PV /dev/sdc
+## 2. Ajourter-le dans le PV sysVG
+## 3. Augmentez la taille du volume logique varLV de 3Gio  .
+## 4. Créer deux PV /dev/sdd et /dev/sde  .
+## 5. Créer le VG appVG et ajouter les deux PV  .
+## 6. Creer deux LV: progLM et dataLV  .
+## 7. Formatez progLV en ext4 et dataLV en ext3  .
+## 8.
