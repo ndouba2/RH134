@@ -1,7 +1,3 @@
-# RH134
-Préparation a la certification RH134
-## ins
-https://www.youtube.com/watch?v=Fw4VacjCs9c
 
 ## Configuration avancée du système de fichiers
 
@@ -35,9 +31,4 @@ Contexte de sécurité SELinux : Le contexte de sécurité SELinux est une techn
 En résumé, la formation RH134 couvre le contrôle d'accès aux fichiers avec les permissions et les ACLs en utilisant des techniques telles que les permissions de fichiers, les permissions de répertoires, les ACLs et le contexte de sécurité SELinux. Les participants apprendront à configurer ces techniques pour assurer la sécurité des fichiers et des répertoires sur le système.
 
 
-````
-bash/sh
-if 
-then 
-elif
 
