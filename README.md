@@ -147,14 +147,42 @@ NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda               8:0    0   40G  0 disk 
 ├─sda1            8:1    0    1G  0 part /boot
 └─sda2            8:2    0   39G  0 part 
-  ├─centos-root 253:0    0 35,1G  0 lvm  /
-  └─centos-swap 253:1    0  3,9G  0 lvm  
+  ├─centos-root 253:0    0 35,1G  0 lvm  /  .
+  └─centos-swap 253:1    0  3,9G  0 lvm   .
 sr0              11:0    1  4,4G  0 rom  /run/media/samy/CentOS 7 x86_64
 [root@master ~]# 
+
+## Créer un PV /dev/sdd ======> monter un nouveau disk   .
+[root@master ~]# pvcreate /dev/sdb
+  Physical volume "/dev/sdb" successfully created  .
+  
+  
+## verification 
+[root@master ~]# pvs
+  PV         VG     Fmt  Attr PSize   PFree 
+  /dev/sda2  centos lvm2 a--  <39,00g  4,00m
+  /dev/sdb          lvm2 ---   20,00g 20,00g
+
+## Ajouter-le dans le PV sysVG
+## Affichez la configuration du VG .[root@master ~]# vgs
+  VG     #PV #LV #SN Attr   VSize   VFree
+  centos   1   2   0 wz--n- <39,00g 4,00m
+
+## Ajouter le PV a sysVG
+
+[root@master ~]# vgextend centos /dev/sdb
+  Volume group "centos" successfully extended
+##Affichez de nouveau la configuration du VG. 
+[root@master ~]# vgs
+  VG     #PV #LV #SN Attr   VSize  VFree 
+  centos   2   2   0 wz--n- 58,99g 20,00g
+
 
 
 
 ### Partitionnement post-installation 
+
+
 ## 1. Creer un PV /dev/sdc  .
 ## 2. Ajourter-le dans le PV sysVG  .
 ## 3. Augmentez la taille du volume logique varLV de 3Gio  .
