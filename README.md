@@ -125,6 +125,7 @@ En résumé, la formation RH134 couvre la configuration des services de nommage 
 
 ## Configuration de l'authentification à l'aide de LDAP et de Kerberos
 
+
 La configuration de l'authentification à l'aide de LDAP et de Kerberos est l'un des sujets abordés dans la formation RH134. Voici un aperçu des sujets abordés :
 
 Introduction à LDAP : LDAP (Lightweight Directory Access Protocol) est un protocole de communication utilisé pour accéder à des services d'annuaire. La formation RH134 couvre les principes fondamentaux de LDAP, y compris son architecture, ses composants et son fonctionnement.
@@ -140,6 +141,18 @@ Intégration de LDAP et de Kerberos : La formation RH134 couvre également l'int
 En résumé, la formation RH134 couvre la configuration de l'authentification à l'aide de LDAP et de Kerberos, en utilisant des techniques telles que l'installation et la configuration de LDAP et de Kerberos, l'intégration de LDAP et de Kerberos pour une authentification centralisée. Les participants apprendront à configurer ces techniques pour améliorer la performance et la sécurité de leur système Red Hat Enterprise Linux.
 
 
+## Afficher le partitionnem 
+[root@master ~]# lsblk
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               8:0    0   40G  0 disk 
+├─sda1            8:1    0    1G  0 part /boot
+└─sda2            8:2    0   39G  0 part 
+  ├─centos-root 253:0    0 35,1G  0 lvm  /
+  └─centos-swap 253:1    0  3,9G  0 lvm  
+sr0              11:0    1  4,4G  0 rom  /run/media/samy/CentOS 7 x86_64
+[root@master ~]# 
+
+
 
 ### Partitionnement post-installation 
 ## 1. Creer un PV /dev/sdc  .
@@ -151,4 +164,4 @@ En résumé, la formation RH134 couvre la configuration de l'authentification à
 ## 7. Formatez progLV en ext4 et dataLV en ext3  .
 ## 8. Montez les deux LV automatiquement au démarrage du serveur  .
 ## 9. creer le repertoire infos dans dataLV  .
-## 10. Convertissez dataLV en ext4 sans perdre les données 
+## 10. Convertissez dataLV en ext4 sans perdre les données
